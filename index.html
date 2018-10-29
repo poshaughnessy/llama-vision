@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Llama Detector</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@0.1.1"></script>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page" id="page-intro">
+      <h1>Llama Detector</h1>
+      <p>Detects llamas through your camera.</p>
+      <p>An <a href="">open source</a> demo by <a href="https://peteroshaughnessy.com">Peter O'Shaughnessy</a> 
+        from <a href="https://samsunginter.net">Samsung Internet</a></p>
+      <button id="btn-go">Go</button>
+    </div>
+    <div class="page" id="page-detector">
+        <video id="video" autoplay/>
+    </div>
+  </body>
+</html>
