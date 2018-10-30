@@ -49,7 +49,8 @@
 
     const constraints = {
       width: {ideal: maxWidth, max: maxWidth},
-      height: {ideal: maxHeight, max: maxHeight}
+      height: {ideal: maxHeight, max: maxHeight},
+      facingMode: {exact: 'environment'} // Rear-facing camera
      };
 
      // Need to set dimensions explicitly on the video element for tensorflow
