@@ -7,20 +7,30 @@
     <script src="scripts/lib/tfjs@0.11.7.js"></script>
     <script src="scripts/lib/mobilenet@0.1.1.js"></script>
     <script defer src="scripts/index.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <div class="page" id="page-intro">
       <h1>Llama Vision</h1>
       <h2>Detect llamas through your camera.</h2>      
-      <img class="llama" src="images/llama-silhouette.svg" width="200px" alt="Silhouette of a llama"/>  
-      <button id="btn-go">Go</button>
-      <p>An <a href="">open source</a> demo by <a href="https://peteroshaughnessy.com">Peter O'Shaughnessy</a> 
-        from <a href="https://samsunginter.net">Samsung Internet</a></p>
+      <img class="llama" src="images/llama-silhouette.svg" width="100px" alt="Silhouette of a llama"/>
+      <div id="unsupported" class="unsupported">
+        <p id="error-msg" class="error"></p>
+        <p class="error">Sorry, your web browser does not appear to support our llama detection :( 
+          Please try in another browser.</p>
+      </div>
+      <div id="supported" class="supported">
+        <button id="btn-go" class="btn-go">Go</button>
+      </div>
+      <p>An <a href="https://github.com/poshaughnessy/llama-vision">open source</a> demo by 
+        <a href="https://peteroshaughnessy.com">Peter O'Shaughnessy</a>, 
+        <a href="https://samsunginter.net">Samsung Internet</a>.</p>
     </div>
-    <div class="page" id="page-detector">
-      <p id="detected">✨🎉 OMG it's a llama! 🎉✨</p>
-      <video id="video" autoplay/>
-    </div>
+    <div class="page page-detector hidden" id="page-detector">
+        <div class="detected-border"></div>
+        <p class="top-msg detecting-msg">Looking for llamas...</p>
+        <p class="top-msg detected-msg">✨🎉 OMG it's a llama! 🎉✨</p>
+        <video id="video" autoplay/>
+      </div>
   </body>
 </html>
