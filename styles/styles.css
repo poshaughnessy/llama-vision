@@ -37,6 +37,10 @@ a:visited {
     display: none;
 }
 
+.page-intro {
+    padding: 10px;
+}
+
 .page-detector {
     overflow: hidden;
 }
