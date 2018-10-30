@@ -43,6 +43,7 @@ a:visited {
 
 .page-detector {
     overflow: hidden;
+    background: #333;
 }
 
 .supported,
@@ -120,7 +121,8 @@ button:hover {
     100% {border-color: #fff}
 }
 
-.top-msg {
+.top-msg,
+.bottom-msg {
     display: none;
     position: absolute;
     width: 100%;
@@ -129,13 +131,18 @@ button:hover {
     text-shadow: 2px 2px #333;
 }
 
+.bottom-msg {
+    top: auto;
+    bottom: 15px;
+}
+
 .detecting-msg {
     font-size: 1.5em;
     color: #fff;
 }
 
 .detected-msg {
-    font-size: 3em;
+    font-size: 2em;
     -webkit-animation: rainbow-text 3s infinite;
     animation: rainbow-text 3s infinite;
     display: none;
