@@ -5,6 +5,7 @@
   const video = document.getElementById('video');
   const pageIntro = document.getElementById('page-intro');
   const pageDetector = document.getElementById('page-detector');
+  const detectedMessage = document.getElementById('detected');
 
   let predictionModel;
 
@@ -21,9 +22,11 @@
         const topResult = predictions[0];
   
         if (topResult.className === 'llama') {
-          console.log('*** OMG llama!', topResult);
+          console.log('OMG llama!', topResult);
+          detectedMessage.style.display = 'block';
         } else {
           console.log('No llama...', predictions);
+          detectedMessage.style.display = 'none';
         }
     
       })

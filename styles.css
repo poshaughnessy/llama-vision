@@ -38,7 +38,7 @@ a:visited {
 }
 
 h1 {
-    color: #9882ac;
+    color: #7b6fb7;
     font-size: 3em;
     text-shadow: 1px 1px #6e5b80;
 }
@@ -53,7 +53,7 @@ img.llama {
 }
 
 button {
-    background-color: #9882ac;
+    background-color: #6457a6;
     color: #fff;
     border: 1px solid #6e5b80;
     border-radius: 5px;
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-    background-color: #a692b8;
+    background-color: #7b6fb7;
 }
 
 #btn-go {
@@ -73,4 +73,33 @@ button:hover {
 
 #page-detector {
     overflow: hidden;
+}
+
+@-webkit-keyframes rainbow {
+    0% {color: #e63462}
+    20% {color: #fde74c}
+    40% {color: #9bc53d}
+    60% {color: #5dd9c1}
+    80% {color: #6457a6}
+}
+
+@keyframes rainbow {
+    0% {color: #e63462}
+    20% {color: #fde74c}
+    40% {color: #9bc53d}
+    60% {color: #5dd9c1}
+    80% {color: #6457a6}
+}
+
+.detected {
+    -webkit-animation: rainbow 3s infinite;
+    -ms-animation: rainbow 3s infinite;
+    animation: rainbow 3s infinite;
+    display: none;
+    font-size: 3em;
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    text-align: center;
+    text-shadow: 1px 1px #333;
 }
