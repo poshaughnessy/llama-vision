@@ -2,11 +2,18 @@
  * Red color: #db5461
  * 
  */
+
+html {
+    height: 100%;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #ebfcfb;
+    background-color: #ccf1ef;
+    background: linear-gradient(#ebfcfb, #ccf1ef);
     color: #333333;
     margin: 0;
+    height: 100%;
 }
 
 a {
@@ -33,6 +40,7 @@ a:visited {
 h1 {
     color: #9882ac;
     font-size: 3em;
+    text-shadow: 1px 1px #6e5b80;
 }
 
 h2 {
@@ -47,7 +55,7 @@ img.llama {
 button {
     background-color: #9882ac;
     color: #fff;
-    border: none;
+    border: 1px solid #6e5b80;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
@@ -61,4 +69,8 @@ button:hover {
     font-size: 1.3em;
     min-width: 150px;
     margin: 1em 0 2em 0;
+}
+
+#page-detector {
+    overflow: hidden;
 }

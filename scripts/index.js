@@ -20,10 +20,10 @@
 
         const topResult = predictions[0];
   
-        if (topResult.className === 'llama' && topResult.probability > 0.5) {
-          console.log('*** OMG llama!');
+        if (topResult.className === 'llama') {
+          console.log('*** OMG llama!', topResult);
         } else {
-          console.log('No llama...')
+          console.log('No llama...', predictions);
         }
     
       })
@@ -38,14 +38,19 @@
 
   function setupCamera() {
 
-    const maxWidth = document.innerWidth;
-    const maxHeight = document.innerHeight;
+    const maxWidth = window.innerWidth;
+    const maxHeight = window.innerHeight;
 
     const constraints = {
       width: {ideal: maxWidth, max: maxWidth},
       height: {ideal: maxHeight, max: maxHeight}
      };
-   
+
+     // Need to set dimensions explicitly on the video element for tensorflow
+     // (https://github.com/tensorflow/tfjs/issues/322)
+     video.width = maxWidth;
+     video.height = maxHeight;
+
      navigator.mediaDevices.getUserMedia({audio: false, video: constraints})
       .then(stream => {
 
