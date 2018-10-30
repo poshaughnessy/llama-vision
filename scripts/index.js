@@ -15,7 +15,11 @@
 
     setInterval(() => {
 
+      console.log('HERE 3');
+
       predictionModel.classify(video).then(predictions => {
+
+        console.log('HERE 4');
 
         if (!detecting) {
           document.body.classList.add('detecting');
@@ -75,8 +79,13 @@
           video.src = window.URL.createObjectURL(stream);
         }
 
+        console.log('HERE 1');
+
         mobilenet.load().then(model => {
           predictionModel = model;
+          
+          console.log('HERE 2');
+          
           detectLlamas();
         });
 
