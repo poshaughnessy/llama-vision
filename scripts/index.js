@@ -87,6 +87,10 @@
           console.log('HERE 2');
           
           detectLlamas();
+        })
+        .catch(err => {
+          console.error('Tensorflow error', err);
+          showUnsupported(err);
         });
 
       })
