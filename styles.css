@@ -81,6 +81,7 @@ button:hover {
     40% {color: #9bc53d}
     60% {color: #5dd9c1}
     80% {color: #6457a6}
+    100% {color: #fff}
 }
 
 @keyframes rainbow {
@@ -89,9 +90,10 @@ button:hover {
     40% {color: #9bc53d}
     60% {color: #5dd9c1}
     80% {color: #6457a6}
+    100% {color: #fff}
 }
 
-.detected {
+#detected {
     -webkit-animation: rainbow 3s infinite;
     -ms-animation: rainbow 3s infinite;
     animation: rainbow 3s infinite;
