@@ -131,11 +131,11 @@ button:hover {
     text-shadow: 2px 2px #333;
 }
 
-.bottom-msg {
-    top: auto;
-    bottom: 15px;
+.loading-msg {
+    display: block;
 }
 
+.loading-msg,
 .detecting-msg {
     font-size: 1.5em;
     color: #fff;
@@ -152,12 +152,25 @@ body.detecting .detecting-msg {
     display: block;
 }
 
+body.detecting .loading-msg {
+    display: none;
+} 
+
 body.detected .detecting-msg {
     display: none;
 }
 
 body.detected .detected-msg {
     display: block;
+}
+
+body.detecting .loading-msg {
+    display: none;
+}
+
+.bottom-msg {
+    top: auto;
+    bottom: 15px;
 }
 
 .detected-border {
