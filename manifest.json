@@ -3,8 +3,8 @@
     "short_name": "Llama Vision",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#ebfcfb",
-    "theme_color": "#ebfcfb",
+    "background_color": "#cbc6e4",
+    "theme_color": "#cbc6e4",
     "description": "Detect llamas through your camera.",
     "icons": [
       {
