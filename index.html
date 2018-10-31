@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ebfcfb">
+    <meta name="theme-color" content="#e5c9e1">
     <title>Llama Detector</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"></script>
     <script src="scripts/lib/mobilenet@0.1.1.js"></script>
@@ -14,18 +14,18 @@
   <body>
     <div class="page page-intro" id="page-intro">
       <h1>Llama Vision</h1>
-      <h2>Detect llamas through your camera.</h2>      
-      <img class="llama" src="images/llama-silhouette.svg" width="100px" alt="Silhouette of a llama"/>
+      <h2>Detect llamas through your camera.</h2>
+      <img class="llama" src="images/llama-lens-right.svg" width="150px" alt="Silhouette of a llama"/>
       <div id="unsupported" class="unsupported">
         <p id="error-msg" class="error"></p>
-        <p class="error">Sorry, your web browser does not appear to support our llama detection :( 
+        <p class="error">Sorry, your web browser does not appear to support our llama detection :(
           Please try in another browser.</p>
       </div>
       <div id="supported" class="supported">
         <button id="btn-go" class="btn-go">Go</button>
       </div>
-      <p>An <a href="https://github.com/poshaughnessy/llama-vision">open source</a> demo by 
-        <a href="https://peteroshaughnessy.com">Peter O'Shaughnessy</a>, 
+      <p>An <a href="https://github.com/poshaughnessy/llama-vision">open source</a> demo by
+        <a href="https://peteroshaughnessy.com">Peter O'Shaughnessy</a>,
         <a href="https://samsunginter.net">Samsung Internet</a>.</p>
     </div>
     <div class="page page-detector hidden" id="page-detector">
