@@ -21,7 +21,7 @@
         document.body.classList.add('llama');
       } else if (topResult.className === 'badger') {
         // Just a little easter egg ;)
-        document.body.classList.add('badger');
+        document.body.classList.add('badger');        
         document.body.classList.remove('llama');
       } else {
         console.log('No llama...', predictions);
