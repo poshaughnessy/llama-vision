@@ -1,8 +1,6 @@
-# Llama Detector
+# Llama Vision
 
-_In progress..._
-
-A web page that detects llamas through your camera.
+A website that detects llamas through your camera.
 
 ## Instructions
 
