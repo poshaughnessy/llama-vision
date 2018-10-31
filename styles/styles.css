@@ -155,7 +155,7 @@ body.badger .badger-msg {
     bottom: 15px;
 }
 
-.detected-border {
+.llama-border {
     position: absolute;
     z-index: 1;
     width: 100%;
