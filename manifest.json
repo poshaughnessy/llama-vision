@@ -1,6 +1,6 @@
 {
     "name": "Llama Vision",
-    "short_name": "Llama Vision",
+    "short_name": "LlamaVision",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#f0eefb",
