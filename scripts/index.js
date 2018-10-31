@@ -1,6 +1,6 @@
 (() => {
 
-  const DETECTION_INTERVAL_MILLIS = 2000;
+  const DETECTION_INTERVAL_MILLIS = 1000;
 
   const video = document.querySelector('video');
   const pages = document.querySelectorAll('.page');
@@ -12,30 +12,28 @@
 
   function detectLlamas() {
 
-    setInterval(() => {
+    predictionModel.classify(video).then(predictions => {
 
-      predictionModel.classify(video).then(predictions => {
+      const topResult = predictions[0];
 
-        const topResult = predictions[0];
+      if (topResult.className === 'llama') {
+        console.log('OMG llama!', topResult);
+        document.body.classList.add('llama');
+      } else if (topResult.className === 'badger') {
+        // Just a little easter egg ;)
+        document.body.classList.add('badger');
+      } else {
+        console.log('No llama...', predictions);
+        document.body.classList.remove('llama', 'badger');
+      }
 
-        if (topResult.className === 'llama') {
-          console.log('OMG llama!', topResult);
-          document.body.classList.add('llama');
-        } else if (topResult.className === 'badger') {
-          // Just a little easter egg ;)
-          document.body.classList.add('badger');
-        } else {
-          console.log('No llama...', predictions);
-          document.body.classList.remove('llama', 'badger');
-        }
+      setTimeout(detectLlamas, DETECTION_INTERVAL_MILLIS);
 
-      })
-      .catch(err => {
-        console.error('classify error', err);
-        showUnsupported(err);
-      });
-
-    }, DETECTION_INTERVAL_MILLIS);
+    })
+    .catch(err => {
+      console.error('classify error', err);
+      showUnsupported(err);
+    });
 
   }
 
