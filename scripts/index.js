@@ -8,7 +8,6 @@
   const unsupportedDiv = document.getElementById('unsupported');
   const errorMsg = document.getElementById('error-msg');
 
-  let isCameraReady = false;
   let predictionModel = null;
 
   function detectLlamas() {
@@ -21,10 +20,13 @@
 
         if (topResult.className === 'llama') {
           console.log('OMG llama!', topResult);
-          document.body.classList.add('detected');
+          document.body.classList.add('llama');
+        } else if (topResult.className === 'badger') {
+          // Just a little easter egg ;)
+          document.body.classList.add('badger');
         } else {
           console.log('No llama...', predictions);
-          document.body.classList.remove('detected');
+          document.body.classList.remove('llama', 'badger');
         }
 
       })
@@ -37,12 +39,10 @@
 
   }
 
-  function checkReadyToDetect() {
+  function startDetection() {
 
-    if (isCameraReady && predictionModel) {
-      document.body.classList.add('detecting');
-      detectLlamas();
-    }
+    document.body.classList.add('detecting');
+    detectLlamas();
 
   }
 
@@ -79,8 +79,14 @@
         video.src = window.URL.createObjectURL(stream);
       }
 
-      isCameraReady = true;
-      checkReadyToDetect();
+      mobilenet.load().then(model => {
+        predictionModel = model;
+        startDetection();
+      })
+      .catch(err => {
+        console.error('Tensorflow error', err);
+        showUnsupported(err);
+      });
 
     })
     .catch(err => {
@@ -123,15 +129,6 @@
     btnGo.addEventListener('click', () => {
       setupCamera();
       showPage('detector');
-    });
-
-    mobilenet.load().then(model => {
-      predictionModel = model;
-      checkReadyToDetect();
-    })
-    .catch(err => {
-      console.error('Tensorflow error', err);
-      showUnsupported(err);
     });
 
     showSupported();

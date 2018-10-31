@@ -23,10 +23,7 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #cbc6e4;
-    background-image: radial-gradient(#fff, #cbc6e4);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #f0eefb;
     color: #333333;
     margin: 0;
 }
@@ -119,12 +116,13 @@ button:hover {
 }
 
 .loading-msg,
-.detecting-msg {
+.detecting-msg,
+.badger-msg {
     font-size: 1.5em;
     color: #fff;
 }
 
-.detected-msg {
+.llama-msg {
     font-size: 2em;
     -webkit-animation: rainbow-text 3s infinite;
     animation: rainbow-text 3s infinite;
@@ -139,16 +137,17 @@ body.detecting .loading-msg {
     display: none;
 }
 
-body.detected .detecting-msg {
+body.llama .detecting-msg,
+body.badger .detecting-msg {
     display: none;
 }
 
-body.detected .detected-msg {
+body.llama .llama-msg {
     display: block;
 }
 
-body.detecting .loading-msg {
-    display: none;
+body.badger .badger-msg {
+    display: block;
 }
 
 .bottom-msg {
@@ -164,7 +163,7 @@ body.detecting .loading-msg {
     border: 10px solid transparent;
 }
 
-body.detected .detected-border {
+body.llama .llama-border {
     -webkit-animation: rainbow-border 3s infinite;
     animation: rainbow-border 3s infinite;
     border: 10px solid #e63462;
