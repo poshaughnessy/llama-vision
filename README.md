@@ -16,4 +16,4 @@ It's all client-side, so to develop locally you can serve the page using any sta
 
 ## More information
 
-Blog post coming soon!
+See [the blog post here](https://medium.com/samsung-internet-dev/introducing-llama-vision-a-website-that-detects-llamas-through-your-camera-aa6f16144ac4)!
