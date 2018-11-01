@@ -7,6 +7,7 @@
   const supportedDiv = document.getElementById('supported');
   const unsupportedDiv = document.getElementById('unsupported');
   const errorMsg = document.getElementById('error-msg');
+  const audio = new Audio('audio/llama.mp3');
 
   let predictionModel = null;
 
@@ -17,15 +18,23 @@
       const topResult = predictions[0];
 
       if (topResult.className === 'llama') {
+
         console.log('OMG llama!', topResult);
         document.body.classList.add('llama');
+
+        audio.play(); // "Llama!"
+
       } else if (topResult.className === 'badger') {
+
         // Just a little easter egg ;)
         document.body.classList.add('badger');
         document.body.classList.remove('llama');
+
       } else {
+
         console.log('No llama...', predictions);
         document.body.classList.remove('llama', 'badger');
+
       }
 
       setTimeout(detectLlamas, DETECTION_INTERVAL_MILLIS);
