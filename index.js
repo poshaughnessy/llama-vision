@@ -11,9 +11,10 @@
 
   let predictionModel = null;
 
-  function detectLlamas() {
+  async function detectLlamas() {
 
-    predictionModel.classify(video).then(predictions => {
+    try {
+      const predictions = await predictionModel.classify(video);
 
       const topResult = predictions[0];
 
@@ -39,11 +40,10 @@
 
       setTimeout(detectLlamas, DETECTION_INTERVAL_MILLIS);
 
-    })
-    .catch(err => {
+    } catch(err) {
       console.error('classify error', err);
       showUnsupported(err);
-    });
+    }
 
   }
 
@@ -54,7 +54,7 @@
 
   }
 
-  function setupCamera() {
+  async function setupCamera() {
 
     const maxWidth = window.innerWidth;
     const maxHeight = window.innerHeight;
@@ -70,8 +70,9 @@
     video.width = maxWidth;
     video.height = maxHeight;
 
-    navigator.mediaDevices.getUserMedia({audio: false, video: constraints})
-    .then(stream => {
+    try {
+    
+      const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: constraints});
 
       const videoTracks = stream.getVideoTracks();
 
@@ -87,20 +88,18 @@
         video.src = window.URL.createObjectURL(stream);
       }
 
-      mobilenet.load().then(model => {
-        predictionModel = model;
+      try {
+        const predictionModel = await mobilenet.load();
         startDetection();
-      })
-      .catch(err => {
+      } catch(err) {
         console.error('Tensorflow error', err);
         showUnsupported(err);
-      });
+      }
 
-    })
-    .catch(err => {
+    } catch(err) {
       console.error('getUserMedia error', err);
       showUnsupported(err);
-    });
+    }
 
   }
 
