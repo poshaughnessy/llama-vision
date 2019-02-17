@@ -89,7 +89,7 @@
       }
 
       try {
-        const predictionModel = await mobilenet.load();
+        predictionModel = await mobilenet.load();
         startDetection();
       } catch(err) {
         console.error('Tensorflow error', err);
