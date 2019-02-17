@@ -27,7 +27,7 @@
 
       } else if (topResult.className === 'badger') {
 
-        // Just a little easter egg ;)
+        // Just a little easter egg ;-)
         document.body.classList.add('badger');        
         document.body.classList.remove('llama');
 
